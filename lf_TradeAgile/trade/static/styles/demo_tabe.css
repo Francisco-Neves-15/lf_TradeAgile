@@ -1,0 +1,73 @@
+:root {
+    --ta_azul: #1e5e8b;
+    --azul_forte: #004aad;
+    --azul_fraco: #9eb9cc;
+    --amarelo: #ffde59;
+    --cinza: #d9d9d9;
+    --fonte_padrao: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --verde_sucesso: #4FAD00;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: var(--fonte_padrao);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(45deg, rgba(11,82,130,1) 0%, rgba(53,112,151,1) 100%);
+    width: 100%;
+    height: auto;
+    padding: 2vh;
+}
+h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+h2 {
+    color: #fff;
+    text-align: left;
+    margin-bottom: 20px;
+    width: 90%;
+    margin-left: 2vh;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse; /* Remove o espaço entre as bordas das células */
+    margin-bottom: 20px; /* Espaço entre as tabelas */
+    background-color: #ffffff;
+}
+
+th, td {
+    border-bottom: 1px solid #00000050; /* Borda inferior das células */
+    padding: 12px; /* Espaçamento interno */
+    text-align: left; /* Alinhamento do texto */
+}
+
+th {
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+td {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+td:hover {
+    background-color: #f1f1f1;
+    color: #000000;
+}

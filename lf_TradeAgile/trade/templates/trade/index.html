@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Trade.Agile - Ínicio</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/index.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/tradeagile_favicon.png' %}">
+</head>
+<body>
+
+    <header>
+        <div class="logo_div">
+            <a href="{% url 'welcome' %}" target="iframe_a" id="hoverUnderline" class="hover_animado_underline selecionado_underline"><img src="{% static 'images/tradeagile_logo.png' %}" alt=""></a>
+        </div>
+        <nav>
+            <ul>
+                <li id="hoverUnderline" class="hover_animado_underline"><a href="{% url 'cadastro_clientes' %}" target="iframe_a">Cadastros</a></li>
+                <li id="hoverUnderline" class="hover_animado_underline"><a href="{% url 'demonstrativo_tabelas' %}" target="iframe_a">Demonstrativo das Tabelas</a></li>
+                <li id="hoverUnderline" class="hover_animado_underline"><a href="{% url 'galeria_produtos' %}" target="iframe_a">Galeria de Produtos</a></li>
+                <li id="hoverUnderline" class="hover_animado_underline"><a href="{% url 'realizar_venda' %}" target="iframe_a">Realizar Venda</a></li>
+            </ul>
+        </nav>
+        <div class="logout_div">
+            <a href="{% url 'logout' %}"><button><i class='bx bx-log-out'></i><p>Sair</p></button></a>
+        </div>
+    </header>
+
+    <main>
+        <iframe id="id_frame" src="{% url 'welcome' %}" name="iframe_a" frameborder="0" onload="adjustIframeHeight(this)"></iframe>
+    </main>
+
+    <footer>
+        <p>Trade.Agile® | Todos os direitos reservados. | Senai 2024</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+        // Obtém todos os elementos com o ID 'hoverUnderline'
+        var itensUnderline = document.querySelectorAll('#hoverUnderline');
+        // Adiciona um event listener de clique a cada item
+        itensUnderline.forEach(function(item) {
+            item.addEventListener('click', function() {
+                // Remove a classe 'selecionado_underline' de todos os itensUnderline
+                itensUnderline.forEach(function(i) {
+                    i.classList.remove('selecionado_underline');
+                });
+
+                // Adiciona a classe 'selecionado_underline' ao item clicado
+                item.classList.add('selecionado_underline');
+            });
+        });
+        })
+
+    </script>
+</body>
+</html>

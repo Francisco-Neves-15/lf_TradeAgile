@@ -1,0 +1,101 @@
+:root {
+    --ta_azul: #1e5e8b;
+    --azul_forte: #004aad;
+    --azul_fraco: #9eb9cc;
+    --amarelo: #ffde59;
+    --cinza: #d9d9d9;
+    --fonte_padrao: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --verde_sucesso: #4FAD00;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, rgba(11,82,130,1) 0%, rgba(53,112,151,1) 100%);
+    width: 100%;
+    height: auto;
+}
+.left_side {
+    background-color: transparent;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    & h1 {
+        color: #ffffff;
+        font-family: var(--fonte_padrao);
+        align-items: center;
+        font-size: 28px;
+        margin-bottom: -32px;
+    }
+    & p {
+        color: #ffffff;
+        font-family: var(--fonte_padrao);
+        align-items: center;
+        font-size: 28px;
+        margin-top: -32px;
+    }
+}
+
+#td_nome {
+    color: #ffffff;
+    font-family: var(--fonte_padrao);
+    align-items: center;
+    font-size: 64px;
+    animation: td_nome_pulsando 3s infinite linear;
+}
+
+#sucesso_nome {
+    color: #ffffff;
+    font-family: var(--fonte_padrao);
+    align-items: center;
+    font-size: 48px;
+    animation: sucesso_nome_pulsando 3s infinite linear;
+}
+
+.right_side {
+    background-color: transparent;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & img {
+        width: 512px;
+        border: 4px solid #ffffff;
+        border-radius: 30px 0px 30px 0px;
+    }
+}
+@keyframes td_nome_pulsando {
+    0% {
+        color: #ffffff;
+    }
+    50% {
+        color: var(--amarelo);
+        text-shadow: 0px 0px 10px var(--amarelo);
+    }
+    100% {
+        color: #ffffff;
+    }
+}
+
+@keyframes sucesso_nome_pulsando {
+    0% {
+        color: #ffffff;
+    }
+    50% {
+        color: var(--verde_sucesso  );
+        text-shadow: 0px 0px 10px var(--verde_sucesso);
+    }
+    100% {
+        color: #ffffff;
+    }
+}

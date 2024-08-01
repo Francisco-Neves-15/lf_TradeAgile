@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Trade.Agile - Registrar-se</title>
+    <!-- Link para o arquivo CSS do Bootstrap -->
+    <link href="https://maxcdn.boostrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/login_register.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="{% static 'javascripts/resize.js' %}"></script>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/tradeagile_favicon.png' %}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="tit_register">Registre-se na <span>Trade.Agile</span></h2>
+
+        <!-- Formulário de registro -->
+            <form method="post" class="form-group form_div_register">
+            <!-- Token CSRF -->
+            {% csrf_token %}
+
+            <!-- Renderiza os campos do formulário -->
+            <div class="left_side_reg">
+                <div class="form-group input-container">
+                    <label for="id_username" class="label">Nome de Usuário: </label>
+                    {{ form.username }}
+                </div>
+
+                <div class="form-group input-container">
+                    <label for="id_email" class="label">Endereço de E-mail: </label>
+                    {{ form.email }}
+                </div>
+            </div>
+
+            <div class="right_side_reg">
+                <div class="requisitos_senhas">
+                    <h3> A senha deve possuir:</h3>
+                    <ul>
+                        <li>Mais de 8 Caracteres;</li>
+                        <li>Caracteres Maiúsculos, Minúsculos</li>
+                        <li>Caracteres Minúsculos</li>
+                        <li>Números</li>
+                        <li>Símbolos</li>
+                        <li>A Senha não pode ser semelhante ao Nome de Usuário</li>
+                    </ul>
+                </div>
+
+                <div class="form-group input-container mov_esq">
+                    <label for="id_password1" class="password">Senha: </label>
+                    {{ form.password1 }}
+                </div>
+
+                <div class="form-group input-container mov_esq">
+                    <label for="id_password2" class="password">Confirme a Senha: </label>
+                    {{ form.password2 }}
+                </div>
+            </div>
+
+            <!-- Botão de registro -->
+            <div class="button_div">
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </div>
+
+        </form>
+
+        <!-- Link para a página de login -->
+        <p class="ja_possui_c">Já possui uma conta? <a href="{% url 'login' %}">Faça login</a></p>
+    </div>
+    <!-- Scripts do jQuery e Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Trade.Agile - Tabelas</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/demo_tabe.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="{% static 'javascripts/index.js' %}"></script>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/tradeagile_favicon.png' %}">
+</head>
+<body>
+    <main>
+        <h1>Demonstrativo das Tabelas</h1>
+
+        <h2>Clientes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Código</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in clientes %}
+                <tr>
+                    <td>{{ cliente.nomecli }}</td>
+                    <td>{{ cliente.codcli }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Fornecedores</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Código</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for fornecedor in fornecedores %}
+                <tr>
+                    <td>{{ fornecedor.nomeforn }}</td>
+                    <td>{{ fornecedor.codiforn }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Produtos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Código</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for produto in produtos %}
+                <tr>
+                    <td>{{ produto.descprod }}</td>
+                    <td>{{ produto.codiprod }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Vendas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código da Venda</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for venda in vendas %}
+                <tr>
+                    <td>{{ venda.codivend }}</td>
+                    <td>{{ venda.valorvend }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

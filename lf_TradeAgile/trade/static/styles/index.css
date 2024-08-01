@@ -1,0 +1,192 @@
+:root {
+    --ta_azul: #1e5e8b;
+    --azul_forte: #004aad;
+    --azul_fraco: #9eb9cc;
+    --amarelo: #ffde59;
+    --cinza: #d9d9d9;
+    --fonte_padrao: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --verde_sucesso: #4FAD00;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: var(--ta_azul);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 12vh;
+
+    & .logo_div {
+        background-color: transparent;
+        width: 15%;
+        height: 12vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & img {
+            width: 80px;
+            border: 2px solid #ffffff;
+            border-radius: 15px 0px 15px 0px;
+        }
+
+    }
+
+}
+
+nav {
+    background-color: transparent;
+    width: 70%;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        background-color: transparent ;
+        width: 80%;
+    }
+    & ul li {
+        background-color: transparent;
+    }
+    & a {
+        text-decoration: none;
+        color: #ffffff;
+        font-family: var(--fonte_padrao);
+        font-size: 16px;
+        transition: 0.3s;
+    }
+    & a:hover {
+        text-decoration: none;
+        color: var(--amarelo);
+        font-family: var(--fonte_padrao);
+    }
+}
+.logout_div {
+    background-color: transparent;
+    width: 15%;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & button {
+        padding: 2vh;
+        transition: 0.3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: #ffffff solid 2px;
+        border-radius: 15px 0px 15px 0px;
+        background-color: var(--ta_azul);
+        cursor: pointer;
+
+        & i {
+            color: #ffffff;
+            font-size: 24px;
+            text-align: center;
+            margin-right: 1vh;
+        }
+
+        & p {
+            color: #ffffff;
+            font-family: var(--fonte_padrao);
+            font-size: 20px;
+            text-align: center;
+            background-color: transparent;
+            margin: 0;
+        }
+
+    }
+    & button:hover {
+        background-color: var(--amarelo);
+        border: #000000 solid 2px;
+        & i {
+            color: #000000;
+            text-align: center;
+            margin-right: 1vh;
+        }
+
+        & p {
+            color: #000000;
+            font-family: var(--fonte_padrao);
+            text-align: center;
+            background-color: transparent;
+        }
+
+    }
+    & a {
+        text-decoration: none;
+    }
+}
+
+main {
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    margin-top: 4px;
+}
+
+iframe {
+    background: linear-gradient(45deg, rgba(11,82,130,1) 0%, rgba(53,112,151,1) 100%);
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden; /* Remove a barra de rolagem */
+    min-height: 80vh; /* Altura mínima para o iframe */
+}
+
+footer {
+    background-color: var(--ta_azul);
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & p {
+        font-family: var(--fonte_padrao);
+        color: #ffffff;
+        font-size: 24px;
+    }
+}
+
+/* Animao do Hover */
+.hover_animado_underline {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hover_animado_underline::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    border-radius: 2px;
+    background-color: var(--amarelo);
+    transition: width 0.3s ease-in-out;
+    transform-origin: right;
+}
+
+.hover_animado_underline:hover::after {
+    width: 100%;
+    transform-origin: left;
+}
+
+.hover_animado_underline.selecionado_underline::after {
+    width: 100%;
+    transform-origin: left;
+}
